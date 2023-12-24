@@ -19,16 +19,33 @@ def selection_sort(num):
     return num
 
 def binary_search(find_num, num):
-    low, high = 0, len(num) - 1
-    while low <= high:
-        mid = (low + high) // 2
-        if num[mid] == find_num:
-            return mid
-        elif num[mid] < find_num:
-            low = mid + 1
+    # f - first, l - last
+    f, l = 0, len(num) - 1
+    resultok = False
+    while f <= l:
+        m = (f + l) // 2
+        if num[m] == find_num:
+            f = m
+            l = f - 1
+            p = m
+            resultok = True
+        elif num[m] < find_num:
+            f = m + 1
         else:
-            high = mid - 1
-    return -1
+            l = m - 1
+    if resultok:
+        print(f'{find_num} is finded! index {p}')
+    else:
+        print(f'{find_num} is not found')
+
+
+
+
+
+    # if find_num == num[0]:
+    #     return print(f'{find_num} is finded! index 0')
+    # else:
+    #     return print(f'{find_num} is not found')
 
 numbs = []
 for i in range(1, 11):
@@ -42,7 +59,5 @@ else:
     print('coomand is not found')
 if menu == 'bubble' or menu == 'selection':
     print("Sorted List:", sorted_list)
-
-    element_to_search = 10
-    result = binary_search(element_to_search, sorted_list)
-    print(f"Binary Search: Element {element_to_search} found at index {result}" if result != -1 else f"Element {element_to_search} not found")
+    search = 2
+    binary_search(search, numbs)
