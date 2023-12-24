@@ -39,14 +39,6 @@ def binary_search(find_num, num):
         print(f'{find_num} is not found')
 
 
-
-
-
-    # if find_num == num[0]:
-    #     return print(f'{find_num} is finded! index 0')
-    # else:
-    #     return print(f'{find_num} is not found')
-
 numbs = []
 for i in range(1, 11):
     numbs.append(randint(1,100))
