@@ -19,7 +19,8 @@ def selection_sort(num):
     return num
 
 def binary_search(find_num, num):
-    # f - first, l - last
+    # p - pos, f - first, l - last, m - mid
+    p = 0
     f, l = 0, len(num) - 1
     resultok = False
     while f <= l:
