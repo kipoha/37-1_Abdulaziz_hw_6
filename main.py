@@ -30,8 +30,6 @@ def binary_search(find_num, num):
             high = mid - 1
     return -1
 
-# Example usage:
-
 numbs = []
 for i in range(1, 11):
     numbs.append(randint(1,100))
